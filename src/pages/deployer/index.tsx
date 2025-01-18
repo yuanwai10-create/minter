@@ -170,7 +170,7 @@ function Description() {
         </Link>{" "}
         for{" "}
         <Link target="_blank" href="https://ton.org">
-          TON blockchain
+          TON Blockchain
         </Link>
         . This free educational tool allows you to deploy your own Jetton to mainnet in one click.
         You will need at least 0.25 TON for deployment fees. <br />
