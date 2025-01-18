@@ -203,7 +203,11 @@ function Description() {
           href="https://github.com/ton-blockchain/minter-contract#protect-yourself-and-your-users">
           this
         </Link>{" "}
-        to understand why.
+        to understand why. Learn more about other token-minting solutions in our{" "}
+        <Link target="_blank" href="https://blog.ton.org/history-of-mass-minting-on-ton">
+          article
+        </Link>
+        .
       </Typography>
       <GithubButton />
     </StyledDescription>
