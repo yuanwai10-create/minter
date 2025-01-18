@@ -21,14 +21,19 @@ import githubHovered from "assets/icons/github-hover.svg";
 import { AppLogo } from "components/appLogo";
 import heart from "assets/icons/heart.svg";
 import { Outlet } from "react-router-dom";
+import { useNetwork } from "../../lib/hooks/useNetwork";
 
 export const Footer = () => {
+  const { network } = useNetwork();
+
+  let isTestnet = network === "testnet";
+  let switchNetworkText = isTestnet ? "Switch to Mainnet" : "Switch to Testnet";
+  let switchNetworkURL = isTestnet ? "/" : "/?testnet=true";
+
   return (
     <FooterWrapper>
       <SocialsWrapper>
-        <Box>
-          <AppLogo />
-        </Box>
+        <Box></Box>
         <SocialsContent>
           <HoverableIcon
             iconUrl={telegram}
@@ -45,7 +50,7 @@ export const Footer = () => {
       <Separator />
       <CredentialsWrapper>
         <FooterTextBoxLeft>
-          <Typography variant="body2">© 2023 TON Foundation</Typography>
+          <Typography variant="body2">© 2025 TON Foundation</Typography>
         </FooterTextBoxLeft>
         <ContributedWrapper>
           <Typography variant="body2" sx={{ display: "flex", alignItems: "center" }}>
@@ -66,8 +71,8 @@ export const Footer = () => {
           </Typography>
         </ContributedWrapper>
         <FooterTextBoxRight>
-          <FooterLink target="_blank" href="https://t.me/+YDnoBue1Dz81ZTMy">
-            <Typography variant="body2">Support</Typography>
+          <FooterLink target="_blank" href={switchNetworkURL}>
+            <Typography variant="body2">{switchNetworkText}</Typography>
           </FooterLink>
         </FooterTextBoxRight>
       </CredentialsWrapper>
