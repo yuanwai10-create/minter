@@ -20,7 +20,7 @@ export const TransferAction = () => {
   const [amount, setAmount] = useState<number | undefined>(undefined);
   const { showNotification } = useNotification();
   const connectedWalletAddress = useTonAddress();
-  const [tonconnect] = useTonConnectUI();
+  const [tonConnectUI] = useTonConnectUI();
   const [actionInProgress, setActionInProgress] = useRecoilState(jettonActionsState);
 
   if (!balance || !jettonWalletAddress || !isMyWallet) {
@@ -43,7 +43,7 @@ export const TransferAction = () => {
     setActionInProgress(true);
     try {
       await jettonDeployController.transfer(
-        tonconnect,
+        tonConnectUI,
         toDecimalsBN(amount!.toString(), decimals!),
         toAddress!,
         connectedWalletAddress!,

@@ -18,7 +18,7 @@ function RevokeOwnershipAction() {
   const { jettonMaster, isAdmin, getJettonDetails, isMyWallet, symbol, isImageBroken } =
     useJettonStore();
   const walletAddress = useTonAddress();
-  const [tonconnect] = useTonConnectUI();
+  const [tonConnectUI] = useTonConnectUI();
   const { showNotification } = useNotification();
   if (!isAdmin || !isMyWallet) {
     return null;
@@ -37,7 +37,7 @@ function RevokeOwnershipAction() {
       setActionInProgress(true);
       await jettonDeployController.burnAdmin(
         Address.parse(jettonMaster),
-        tonconnect,
+        tonConnectUI,
         walletAddress,
       );
       getJettonDetails();

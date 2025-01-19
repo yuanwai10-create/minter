@@ -15,7 +15,7 @@ function MintJettonsAction() {
   const [amount, setAmount] = useState<number | undefined>(undefined);
   const [open, setOpen] = useState(false);
   const [actionInProgress, setActionInProgress] = useState(false);
-  const [tonconnect] = useTonConnectUI();
+  const [tonConnectUI] = useTonConnectUI();
   const { jettonMaster, isAdmin, symbol, getJettonDetails, isMyWallet, decimals } =
     useJettonStore();
   const walletAddress = useTonAddress();
@@ -39,7 +39,7 @@ function MintJettonsAction() {
     try {
       setActionInProgress(true);
       await jettonDeployController.mint(
-        tonconnect,
+        tonConnectUI,
         Address.parse(jettonMaster),
         value,
         walletAddress,

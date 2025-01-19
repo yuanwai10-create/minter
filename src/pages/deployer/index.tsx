@@ -33,12 +33,12 @@ async function fetchDecimalsOffchain(url: string): Promise<{ decimals?: string }
 function DeployerPage() {
   const { showNotification } = useNotification();
   const walletAddress = useTonAddress();
-  const [tonconnect] = useTonConnectUI();
+  const [tonConnectUI] = useTonConnectUI();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigatePreserveQuery();
 
   async function deployContract(data: any) {
-    if (!walletAddress || !tonconnect) {
+    if (!walletAddress || !tonConnectUI) {
       throw new Error("Wallet not connected");
     }
 
@@ -83,7 +83,7 @@ function DeployerPage() {
     }
 
     try {
-      const result = await jettonDeployController.createJetton(params, tonconnect, walletAddress);
+      const result = await jettonDeployController.createJetton(params, tonConnectUI, walletAddress);
       analytics.sendEvent(
         AnalyticsCategory.DEPLOYER_PAGE,
         AnalyticsAction.DEPLOY,

@@ -24,7 +24,7 @@ function BurnJettonsAction() {
   } = useJettonStore();
   const { showNotification } = useNotification();
   const [actionInProgress, setActionInProgress] = useState(false);
-  const [tonconnect] = useTonConnectUI();
+  const [tonConnectUI] = useTonConnectUI();
   const walletAddress = useTonAddress();
   if (!balance || !isMyWallet) {
     return null;
@@ -56,7 +56,7 @@ function BurnJettonsAction() {
     try {
       setActionInProgress(true);
       await jettonDeployController.burnJettons(
-        tonconnect,
+        tonConnectUI,
         valueDecimals,
         jettonWalletAddress!,
         walletAddress,

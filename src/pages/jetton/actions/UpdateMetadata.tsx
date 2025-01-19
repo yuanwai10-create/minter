@@ -46,8 +46,8 @@ function UpdateMetadata({ setOpen }: UpdateMetadataProps) {
   const { isAdmin, getJettonDetails, jettonMaster } = store;
   const [actionInProgress, setActionInProgress] = useState(false);
   const { showNotification } = useNotification();
-  const [tonconnect] = useTonConnectUI();
-  const walltAddress = useTonAddress();
+  const [tonConnectUI] = useTonConnectUI();
+  const walletAddress = useTonAddress();
   if (!isAdmin) {
     return null;
   }
@@ -68,8 +68,8 @@ function UpdateMetadata({ setOpen }: UpdateMetadataProps) {
           image: values.tokenImage,
           decimals: parseInt(values.decimals).toFixed(0),
         },
-        tonconnect,
-        walltAddress,
+        tonConnectUI,
+        walletAddress,
       );
       await getJettonDetails();
       setOpen(false);
