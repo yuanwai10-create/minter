@@ -18,7 +18,6 @@ import telegramHovered from "assets/icons/telegram-hover.svg";
 import github from "assets/icons/github.svg";
 import orbsLogo from "assets/icons/orbs.svg";
 import githubHovered from "assets/icons/github-hover.svg";
-import { AppLogo } from "components/appLogo";
 import heart from "assets/icons/heart.svg";
 import { Outlet } from "react-router-dom";
 import { useNetwork } from "../../lib/hooks/useNetwork";
