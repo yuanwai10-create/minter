@@ -55,7 +55,7 @@ export const Footer = () => {
           <Typography variant="body2" sx={{ display: "flex", alignItems: "center" }}>
             Contributed with
             <CenteringWrapper mx={0.4}>
-              <img src={heart} alt="Orbs logo" width={12} height={12} />
+              <img src={heart} alt="Love" width={12} height={12} />
             </CenteringWrapper>
             by
             <CenteringWrapper mx={0.4}>
