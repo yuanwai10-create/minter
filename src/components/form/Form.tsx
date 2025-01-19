@@ -185,7 +185,7 @@ export function Form({
             fontWeight={700}
             type="button"
             onClick={onConnect}
-            background="#0088CC">
+            background="#0098EA">
             Connect Wallet
           </AppButton>
         ) : (
