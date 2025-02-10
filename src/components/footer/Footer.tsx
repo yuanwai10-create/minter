@@ -49,7 +49,7 @@ export const Footer = () => {
       <Separator />
       <CredentialsWrapper>
         <FooterTextBoxLeft>
-          <Typography variant="body2">© 2025 TON Foundation</Typography>
+          <Typography variant="body2">© {new Date().getFullYear()} TON Foundation</Typography>
         </FooterTextBoxLeft>
         <ContributedWrapper>
           <Typography variant="body2" sx={{ display: "flex", alignItems: "center" }}>
