@@ -66,7 +66,7 @@ export const EditLogoPopup = ({
             <span
               onClick={() => setTempUrl("https://bitcoincash-example.github.io/website/logo.png")}
               style={{ fontWeight: 700, cursor: "pointer" }}>
-              example
+              Use example.
             </span>
           )}
         </PopupDescription>
@@ -89,7 +89,7 @@ export const EditLogoPopup = ({
               setLogoUrl(tempUrl);
               close();
             }}
-            background="#0088CC">
+            background="#0098EA">
             Save URL
           </AppButton>
         </Box>
